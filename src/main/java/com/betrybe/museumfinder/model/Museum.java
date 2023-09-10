@@ -2,7 +2,9 @@ package com.betrybe.museumfinder.model;
 
 /**
  * Representa um museu com informações detalhadas.
- * Esta classe é usada para modelar informações sobre um museu, incluindo seu nome, descrição, endereço, coleção, URL, coordenadas de localização e identificação legada.
+ * Esta classe é usada para modelar informações sobre um museu,
+ * incluindo seu nome, descrição, endereço, coleção, URL,
+ * coordenadas de localização e identificação legada.
  */
 public class Museum {
 

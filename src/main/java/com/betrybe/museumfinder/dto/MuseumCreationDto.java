@@ -3,7 +3,8 @@ package com.betrybe.museumfinder.dto;
 import com.betrybe.museumfinder.model.Coordinate;
 
 /**
- * Um objeto de transferência de dados (DTO) que representa informações para a criação de um novo museu.
+ * Um objeto de transferência de dados (DTO) que representa
+ * informações para a criação de um novo museu.
  * Este DTO é usado para transmitir informações necessárias para criar um novo museu.
  */
 public record MuseumCreationDto(
