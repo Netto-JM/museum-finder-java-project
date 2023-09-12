@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -45,6 +46,18 @@ public class MuseumController {
   ) {
     Coordinate coordinate = new Coordinate(lat, lng);
     Museum museum = service.getClosestMuseum(coordinate, maxDistKm);
+    return ResponseEntity.ok(ModelDtoConverter.modelToDto(museum));
+  }
+
+  /**
+   * Retrieves a museum by its unique identifier.
+   *
+   * @param id The unique identifier of the museum to retrieve.
+   * @return The retrieved museum.
+   */
+  @GetMapping("/{id}")
+  public ResponseEntity<MuseumDto> getMuseumById(@PathVariable Long id) {
+    Museum museum = service.getMuseum(id);
     return ResponseEntity.ok(ModelDtoConverter.modelToDto(museum));
   }
 
