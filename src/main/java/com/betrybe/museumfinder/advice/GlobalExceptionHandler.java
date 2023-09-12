@@ -23,8 +23,8 @@ public class GlobalExceptionHandler {
    */
   @ExceptionHandler(InvalidCoordinateException.class)
   public ResponseEntity<String> handleInvalidCoordinateException(
-      InvalidCoordinateException ex, WebRequest request) {
-    return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Invalid coordinate!");
+      InvalidCoordinateException ex) {
+    return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Coordenada inválida!");
   }
 
   /**
@@ -36,8 +36,8 @@ public class GlobalExceptionHandler {
    */
   @ExceptionHandler(MuseumNotFoundException.class)
   public ResponseEntity<String> handleMuseumNotFoundException(
-      MuseumNotFoundException ex, WebRequest request) {
-    return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Museum not found!");
+      MuseumNotFoundException ex) {
+    return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Museu não encontrado!");
   }
 
   /**
@@ -49,7 +49,7 @@ public class GlobalExceptionHandler {
    */
   @ExceptionHandler(Exception.class)
   public ResponseEntity<String> handleGenericException(
-      Exception ex, WebRequest request) {
-    return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Internal error!");
+      Exception ex) {
+    return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro interno!");
   }
 }
